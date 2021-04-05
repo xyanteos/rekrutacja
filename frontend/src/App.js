@@ -1,29 +1,49 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import socket from 'socket.io-client'
+import socketio from 'socket.io-client'
 import axios from 'axios'
+import PointersRender from "./pointers/PointersRender";
 
 
 class App extends React.Component {
   state={
     pinpointList : [],
-    socket : socket('ws://localhost:5000/')
+    isVisible : [],
+    socket : new socketio('ws://localhost:5000/')
+  }
+  
+  componentDidMount = () =>{
+    //initialize first data fetch
+    this.getInfo()
+    //initialise websocket event sniffer
+    this.state.socket.on('event',(data)=>{
+      // console.log(data)
+      this.setState({pinpointList:data})
+    })
   }
 
-  componentDidMount = () =>{
-    this.getInfo()
-  }
+  
 
   getInfo = () =>{
     axios.get('http://localhost:5000/pinPoints')
     .then(res =>{
-      console.log(res)
+      // console.log(res)
+      let visiblityCheck = []
+      res.data.forEach(element => {
+        visiblityCheck.push(true)
+      });
+      //resetting the visiblity array in state
+      this.setState({isVisible: visiblityCheck})
+      //setting the pinpoints array in state
+      this.setState({pinpointList: res.data})
+      // console.log(this.state.pinpointList, this.state.isVisible)
     }).catch(err=>{
       console.log(err)
     })
   }
 
   render() {
+
     return (
       <div className="App">
 
@@ -45,17 +65,13 @@ class App extends React.Component {
         <MapContainer
           center={[54.35185288232724, 18.646370587871548]}
           zoom={13}
-          scrollWheelZoom={false}
+          scrollWheelZoom={true}
         >
           <TileLayer
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> Used by: Maciej Nowacki'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={[54.35185288232724, 18.646370587871548]}>
-            <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup>
-          </Marker>
+            <PointersRender pinpoints = {this.state.pinpointList} visiblityCheck={this.state.isVisible}/>
         </MapContainer>
       </div>
     );

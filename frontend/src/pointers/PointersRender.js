@@ -1,14 +1,27 @@
-import React from 'react'
+import React from "react";
+import {Marker, Popup} from 'react-leaflet'
 
-const PointersRender = ({pinpoints}) => {
-    
+const PointersRender = (props) => {
+//   if (props) console.log(props);
+
+  const pins = props.pinpoints.map((point) => {
+    //   console.log(point)
     return (
-        <div>
+      <div key={point._id} id={point._id}>
+        <Marker position={[point.Latitude, point.Longitude]}>
+          <Popup>
             
-        </div>
-    )
-}
+          </Popup>
+        </Marker>
+      </div>
+    );
+  });
 
-export default PointersRender
+  return (
+  <div>
+      {pins}
+  </div>
+  )
+};
 
-
+export default PointersRender;

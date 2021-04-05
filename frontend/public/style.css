@@ -14,17 +14,21 @@
 
 .pinPointList{
     width: 10vw;
+    overflow-y: scroll;
 }
 
 .pinPoint {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: lightgrey;
     padding: 1rem;
     margin: 0.5rem;
     border-radius: 15px;
+}
+.pinPoint div{
+    margin: 0.5rem;
 }
 
 .App{
