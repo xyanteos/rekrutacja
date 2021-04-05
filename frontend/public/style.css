@@ -29,7 +29,7 @@
 
     
     min-width: fit-content;
-    max-width: 10vw;
+    max-width: 100vw;
     padding: 1rem;
 
     background-color: lightgrey;
@@ -39,7 +39,7 @@
 }
 .pinPointHeader div{
     margin: 0.2rem;
-    padding: 0.5rem;
+    padding: 0.7rem;
     background-color: white;
     border-radius: 25px;
     
@@ -58,6 +58,18 @@
     margin-bottom: 2px;
 }
 
+.pinPoint{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 2vh;
+    background-color: lightgrey;
+    border-radius: 10px;
+    margin: 7px;
+    align-items: center;
+    padding: 1rem;
+}
+
 .pinPoint :hover{
     text-decoration: line-through;
     cursor: pointer;
@@ -68,13 +80,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    padding: 0.5rem;
-    margin: 0.5rem 0;
     background-color: lightgrey;
     border-radius: 25px;
 }
 .pinPointInteriors div{
-    background-color: white;
     padding: 0.5rem;
     font-size: 0.8rem;
     margin: 2px;
@@ -86,7 +95,7 @@
 .App{
     display: flex;
     flex-direction: row;
-    border: 3px solid black;
+    border: 3px solid grey;
     border-radius: 5px;
     height: 60vh;
 }

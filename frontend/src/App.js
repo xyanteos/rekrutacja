@@ -45,6 +45,7 @@ class App extends React.Component {
 
   //it's reversing the current hidden status
   reverseHiddenStatus = () => {
+    
     let currentlyVisible = this.state.isVisible;
     for (let i = 0; i < currentlyVisible.length; i++) {
       currentlyVisible[i] = !currentlyVisible[i];
@@ -79,7 +80,7 @@ class App extends React.Component {
     return (
       <div className="body">
         <div className="searchBoxContainer">
-          <input type="text" className="searchBox"  placeholder="Search for an individual" onChange={(event)=>this.handleChange(event)}/>
+          <input type="text" className="searchBox" value={this.state.searchText} placeholder="Search for an individual" onChange={(event)=>this.handleChange(event)}/>
         </div>
         <div className="App">
 
@@ -87,7 +88,10 @@ class App extends React.Component {
             <div className="pinPointHeader">
               <div>ID</div>
               <div>Coords</div>
-              <div className="here" onClick={this.reverseHiddenStatus}>
+              <div className="here" onClick={()=>{
+                this.setState({searchText:""})
+                this.state.searchText==="" ? this.reverseHiddenStatus() : console.log(`the search field needs to be empty`)
+              }}>
                 Hidden
                 <br />
                 (reverse)

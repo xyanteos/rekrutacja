@@ -3,9 +3,9 @@
 const PointerList = (props) => {
   const returner = props.pinpoints.map((point) => {
       //if the search field is empty just look for every option, otherwise search for those with the phrase in id field
-    if(props.searchValue!=="")
+    if(props?.searchValue!=="")
     {
-        if(point._id.toString().includes(props.searchValue))
+        if(point?._id.toString().includes(props.searchValue))
         return(
             <div className="pinPoint" id={`pinPoint${point._id}`} key={point._id} onClick={()=>{props.disableCheck(point._id)}}>
             <div className="pinPointInteriors" >
@@ -21,8 +21,9 @@ const PointerList = (props) => {
             </div>
           </div>
         )
-        return <></>
+        return undefined
     }
+    
     return (
           <div className="pinPoint" id={`pinPoint${point._id}`} key={point._id} onClick={()=>{props.disableCheck(point._id)}}>
             <div className="pinPointInteriors" >
