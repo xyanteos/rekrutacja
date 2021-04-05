@@ -13,24 +13,57 @@
 }
 
 .pinPointList{
-    width: 10vw;
+    min-width: 10vw;
     overflow-y: scroll;
 }
 
-.pinPoint {
+.pinPointHeader {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    background-color: lightgrey;
+
+    width: fit-content;
+    max-width: 10vw;
     padding: 1rem;
-    margin: 0.5rem;
+
+    background-color: lightgrey;
     border-radius: 15px;
+    margin: 1rem 0;
+
 }
-.pinPoint div{
-    margin: 0.5rem;
+.pinPointHeader div{
+    margin: 0.2rem;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 5px;
+    
 }
 
+
+.pinPoint :hover{
+    text-decoration: line-through;
+    cursor: pointer;
+}
+.pinPointInteriors {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.5rem;
+    background-color: lightgrey;
+    border-radius: 15px;
+}
+.pinPointInteriors div{
+    background-color: white;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    margin: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 15px;
+}
 .App{
     display: flex;
     flex-direction: row;

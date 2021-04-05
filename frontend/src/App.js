@@ -1,5 +1,5 @@
 import React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer } from "react-leaflet";
 import socketio from 'socket.io-client'
 import axios from 'axios'
 import PointersRender from "./pointers/PointersRender";
@@ -42,13 +42,24 @@ class App extends React.Component {
     })
   }
 
+  disableCheck = (id) =>{
+    // console.log(document.getElementById(`checkbox${id}`).checked)
+    document.getElementById(`checkbox${id}`).checked ? document.getElementById(`checkbox${id}`).checked = false : document.getElementById(`checkbox${id}`).checked = true
+    //change the value isVisible in the respective element
+    let temporalList = this.state.isVisible
+    temporalList[id-1] ? temporalList[id-1]= false : temporalList[id-1] = true;
+    this.setState({isVisible: temporalList})
+    // console.log(this.state.isVisible) 
+    
+  }
+
   render() {
 
     return (
       <div className="App">
 
         <div className="pinPointList">
-          <div className="pinPoint">
+          <div className="pinPointHeader">
             <div>
               ID
             </div>
@@ -59,7 +70,22 @@ class App extends React.Component {
               Hidden
             </div>
           </div>
-          
+
+          <div className="pinPoint" id="pinPoint1" onClick={()=>{this.disableCheck(1)}}>
+            <div className="pinPointInteriors">
+              <div>
+                1
+              </div>
+              <div>
+                123.213 , 3321.321
+              </div>
+              <div>
+                <input type="checkbox" id="checkbox1"/>
+              </div>
+            </div>
+          </div>
+
+
         </div>
 
         <MapContainer
