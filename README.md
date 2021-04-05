@@ -11,6 +11,7 @@
 ## How to launch
  - Clone the repository
  - Open downloaded repo in IDE
+ - Make sure You've got Node.js installed (npm needed)
  - Open IDE terminal
  - Navigate to backend folder
  - Type ```npm install```
