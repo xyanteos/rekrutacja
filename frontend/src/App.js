@@ -3,7 +3,7 @@ import { MapContainer, TileLayer } from "react-leaflet";
 import socketio from 'socket.io-client'
 import axios from 'axios'
 import PointersRender from "./pointers/PointersRender";
-
+import PointerList from './pointers/PointerList'
 
 class App extends React.Component {
   state={
@@ -29,7 +29,7 @@ class App extends React.Component {
     .then(res =>{
       // console.log(res)
       let visiblityCheck = []
-      res.data.forEach(element => {
+      res.data.forEach(() => {
         visiblityCheck.push(true)
       });
       //resetting the visiblity array in state
@@ -58,7 +58,7 @@ class App extends React.Component {
     return (
       <div className="App">
 
-        <div className="pinPointList">
+        <div className="List">
           <div className="pinPointHeader">
             <div>
               ID
@@ -70,20 +70,7 @@ class App extends React.Component {
               Hidden
             </div>
           </div>
-
-          <div className="pinPoint" id="pinPoint1" onClick={()=>{this.disableCheck(1)}}>
-            <div className="pinPointInteriors">
-              <div>
-                1
-              </div>
-              <div>
-                123.213 , 3321.321
-              </div>
-              <div>
-                <input type="checkbox" id="checkbox1"/>
-              </div>
-            </div>
-          </div>
+          <PointerList pinpoints={this.state.pinpointList} disableCheck={this.disableCheck}/>
 
 
         </div>
