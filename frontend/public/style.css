@@ -46,8 +46,13 @@
 }
 .searchBoxContainer{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 
+}
+.searchBoxContainer button{
+    padding: 0.4rem;
+    border-radius: 5px;
+    margin: 2px;
 }
 
 .searchBox {

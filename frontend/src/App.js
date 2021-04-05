@@ -81,7 +81,7 @@ class App extends React.Component {
       <div className="body">
         <div className="searchBoxContainer">
           <input type="text" className="searchBox" value={this.state.searchText} placeholder="Search for an individual" onChange={(event)=>this.handleChange(event)}/>
-          <button onClick = {this.setState({searchText:""})}>Clear</button>
+          <button onClick={()=>{this.setState({searchText:""})}}>Clear</button>
         </div>
         <div className="App">
 
