@@ -4,7 +4,7 @@
   "description": "Backend made for recruitment process",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,13 @@
   "author": "Maciej Nowacki",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/xyanteos/recruitment/issues"
+    "url": "https://github.com/xyanteos/rekrutacja/backend"
   },
-  "homepage": "https://github.com/xyanteos/recruitment#readme"
+  "homepage": "https://github.com/xyanteos/recruitment#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "socket.io": "^4.0.1"
+  }
 }
