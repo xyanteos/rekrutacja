@@ -1,9 +1,17 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 
 
 //defiining data format
 app.use(express.json())
+//CORS policy
+app.use(cors())
+
+//declaring pinpoints and making a coroutine for change simulation
+
+
+
 
 
 //the initial GET route

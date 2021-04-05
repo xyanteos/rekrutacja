@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#root{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.pinPointList{
+    width: 10vw;
+}
+
+.pinPoint {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: lightgrey;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 15px;
+}
+
+.App{
+    display: flex;
+    flex-direction: row;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+
+.leaflet-container{
+    height: 60vh;
+    width: 70vw;
+}
+
