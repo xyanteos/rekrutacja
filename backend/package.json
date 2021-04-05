@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend made for recruitment process",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xyanteos/recruitment.git"
+  },
+  "keywords": [
+    "map"
+  ],
+  "author": "Maciej Nowacki",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/xyanteos/recruitment/issues"
+  },
+  "homepage": "https://github.com/xyanteos/recruitment#readme"
+}
