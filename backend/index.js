@@ -28,7 +28,7 @@ const io = require('socket.io')(http,{
 
 
 //declaring pinpoints and making a coroutine for change simulation
-let numberOfPinpoints = 15
+let numberOfPinpoints = 10
 let startingLat = 54.35185288232724
 let startingLng = 18.646370587871548
 let pointsList = []

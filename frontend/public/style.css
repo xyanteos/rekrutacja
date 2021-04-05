@@ -16,8 +16,10 @@
 .List{
     
     overflow-y: scroll;
-    padding: 1rem;
+    padding: 0.4rem;
 }
+
+
 
 .pinPointHeader {
     display: flex;
@@ -42,7 +44,19 @@
     border-radius: 25px;
     
 }
+.searchBoxContainer{
+    display: flex;
+    flex-direction: column;
 
+}
+
+.searchBox {
+    width: 15vw;
+    border-radius: 5px;
+    padding: 0.4rem;
+    border: 2px solid grey;
+    margin-bottom: 2px;
+}
 
 .pinPoint :hover{
     text-decoration: line-through;
